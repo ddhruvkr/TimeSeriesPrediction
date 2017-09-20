@@ -2,7 +2,7 @@
 # so we predict say 61st day price, after taking into consideration the prices for the first 60 days
 # the implementation is done using keras
 # it can predict on the basis of multiple values as input
-# it can take any number of features as input, currently 3 (open, high, low) predicting the first one
+# it can take any number of features as input, currently 5 (open, high, low, close and volume of stock) predicting the first one
 # the continuation would be to get news about stock, do sentiment analysis, and use that also to improve prediction
 
 import numpy as np
