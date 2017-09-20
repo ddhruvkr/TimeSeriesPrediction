@@ -10,11 +10,12 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 window=25
-noOfMetrics = 3
+noOfMetrics = 5
 #Open, High, Low
 # We are trying to predict Open price, on the basis of all 3
-datasetTrain = pd.read_csv('Google_Stock_Price_Train.csv')
-trainingSet = datasetTrain.iloc[:,1:4].values
+datasetTrain = pd.read_csv('Google_Stock_Price_Train.csv', thousands=',')
+#print (datasetTrain.iloc[:5:6].values)
+trainingSet = datasetTrain.iloc[:,1:6].values
 #print(trainingSet)
 
 # Feature Scaling
@@ -75,8 +76,8 @@ regressor.compile(optimizer = 'rmsprop', loss = 'mean_squared_error')
 regressor.fit(X_train, y_train, epochs = 25, batch_size = 32)
 
 # Getting the real stock price for February 1st 2012 - January 31st 2017
-datasetTest = pd.read_csv('Google_Stock_Price_Test.csv')
-testSet = datasetTest.iloc[:,1:4].values
+datasetTest = pd.read_csv('Google_Stock_Price_Test.csv', thousands=',')
+testSet = datasetTest.iloc[:,1:6].values
 realStockPrice = np.concatenate((trainingSet[0:1258], testSet), axis = 0)
 
 # Getting the predicted stock price of 2017
