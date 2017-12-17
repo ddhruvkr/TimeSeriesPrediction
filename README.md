@@ -1,4 +1,4 @@
-Did is as part of the challenge to Siraj's Youtube video https://www.youtube.com/watch?v=ftMq5ps503w&t=508s
+Did is as part of the challenge to Siraj's Youtube video https://www.youtube.com/watch?v=ftMq5ps503w
 
 It predicts a google stock price from the taking into consideration past days data. I have used LSTM, on Tensorflow with Keras on top.
 
